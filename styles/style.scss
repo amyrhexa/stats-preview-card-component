@@ -1,0 +1,139 @@
+$Verydarkblue: hsl(233, 47%, 7%);
+$Darkdesaturatedblue: hsl(244, 38%, 16%);
+$Softviolet: hsl(277, 64%, 61%);
+$whiteH: hsl(0, 0%, 100%);
+$whiteP: hsla(0, 0%, 100%, 0.75);
+$whiteS: hsla(0, 0%, 100%, 0.6);
+
+@font-face {
+  font-family: "Inter";
+  src: url(../fonts/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "InterB";
+  src: url(../fonts/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: "LexendDeca";
+  src: url(../fonts/LexendDeca-Regular.ttf);
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: $Verydarkblue;
+  font-size: 15px;
+  font-family: Inter;
+  main {
+    width: 328px;
+    margin: 5.4rem auto;
+    @media screen and (min-width: 1100px) {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      flex-direction: row-reverse;
+      width: 1000px;
+    }
+    .card {
+      background-color: $Darkdesaturatedblue;
+      font-size: 11px;
+      text-align: center;
+      border-radius: 8px;
+      @media screen and (min-width: 1100px) {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: row-reverse;
+        height: 100%;
+        text-align: left;
+      }
+      &-image {
+        width: 100%;
+        height: 240px;
+        background-image: url(../images/image-header-mobile.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        position: relative;
+        @media screen and (min-width: 1100px) {
+          background-image: url(../images/image-header-desktop.jpg);
+          border-top-left-radius: 0px;
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+          width: 50%;
+          height: auto;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: hsla(277, 100%, 50%, 0.452);
+        }
+      }
+      &-text {
+        padding: 2rem;
+        margin-top: 0.5rem;
+        @media screen and (min-width: 1100px) {
+          width: 50%;
+          padding: 4rem;
+        }
+        h1 {
+          color: $whiteH;
+          font-family: InterB;
+          font-size: 1.7rem;
+          span {
+            color: $Softviolet;
+          }
+        }
+        p {
+          color: $whiteP;
+          font-size: 0.88rem;
+          line-height: 1.5rem;
+          margin: 1rem auto 0;
+          width: 91%;
+          @media screen and (min-width: 1100px) {
+            margin: 2rem 0 5rem;
+            width: 100%;
+          }
+        }
+        &_stats {
+          @media screen and (min-width: 1100px) {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: auto auto;
+            column-gap: 2rem;
+          }
+          h2 {
+            margin-top: 2.2rem;
+            color: $whiteH;
+            font-family: InterB;
+            font-size: 1.5rem;
+            @media screen and (min-width: 1100px) {
+              margin: 0;
+            }
+          }
+          span {
+            color: $whiteS;
+            font-family: LexendDeca;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            grid-row: 2/3;
+            @media screen and (min-width: 1200px) {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
